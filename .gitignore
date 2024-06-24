@@ -1,0 +1,5 @@
+*tar.gz
+.tfstate
+.terraform.lock.hcl
+.terraform
+terraform.tfstate*

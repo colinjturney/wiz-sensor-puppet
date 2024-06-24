@@ -1,0 +1,26 @@
+{
+    "name": "wiz-sensor",
+    "version": "0.0.1",
+    "author": "Colin Turney",
+    "summary": "Installs, configures, and manages the Wiz Sensor.",
+    "license": "Apache-2.0",
+    "source": "https://github.com/colinjturney/wiz_sensor",
+    "project_page": "https://github.com/colinjturney/wiz_sensor",
+    "issues_url": "https://github.com/colinjturney/wiz_sensor/issues",
+    "dependencies": [
+    ],
+    "operatingsystem_support": [
+      {
+        "operatingsystem": "Ubuntu",
+        "operatingsystemrelease": [
+          "22"
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "name": "puppet",
+        "version_requirement": ">= 4.5.0"
+      }
+    ]
+  }
