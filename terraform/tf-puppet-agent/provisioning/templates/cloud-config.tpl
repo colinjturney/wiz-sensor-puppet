@@ -4,7 +4,7 @@ write_files:
     permissions: '0744'
     owner: root:root
     content: |
-        #!/bin/bash
+      #!/bin/bash
 
       export APT_PUPPET_RELEASE_URL=${apt_puppet_release_url}
       
@@ -23,9 +23,9 @@ write_files:
 
       export PATH=/opt/puppetlabs/bin:$PATH
 
-      puppet config set server ip-10-0-101-154.eu-west-2.compute.internal --section main
+      puppet config set server puppet --section main
 
       puppet ssl bootstrap
 
 runcmd:
-  - /home/ec2-user/install-puppet-agent.sh
+  - /home/ubuntu/install-puppet-agent.sh

@@ -4,7 +4,7 @@ write_files:
     permissions: '0744'
     owner: root:root
     content: |
-        #!/bin/bash
+      #!/bin/bash
 
       export APT_PUPPET_RELEASE_URL=${apt_puppet_release_url}
       
@@ -19,4 +19,4 @@ write_files:
 
       sudo systemctl start puppetserver
 runcmd:
-  - /home/ec2-user/install-puppet-server.sh
+  - /home/ubuntu/install-puppet-server.sh

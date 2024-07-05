@@ -27,6 +27,12 @@ module "zones" {
   zones = {
     "colinturney.me" = {
       comment = "puppet example"
+      private_zone = true
+      vpc = [
+        {
+          vpc_id = module.vpc.vpc_id
+        }
+      ]
 
     }
   }
@@ -34,19 +40,21 @@ module "zones" {
   tags = {
     ManagedBy = "Terraform"
   }
+
+  depends_on = [ module.vpc ]
 }
 
 module "records" {
   source  = "terraform-aws-modules/route53/aws//modules/records"
   version = "~> 2.0"
 
-  zone_name = keys(module.zones.route53_zone_zone_id)[0]
+  zone_id = values(module.zones.route53_zone_zone_id)[0]
 
   records = [
     {
-      name    = "puppetserver"
+      name    = "puppet"
       type    = "CNAME"
-      ttl     = 3600
+      ttl     = 60
       records = [
         module.puppet_server.puppet_internal_private_dns_name
       ]

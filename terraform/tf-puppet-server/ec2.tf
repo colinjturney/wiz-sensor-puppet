@@ -26,13 +26,3 @@ resource "aws_instance" "puppet_ec2" {
         Name = "PuppetServer"
     }
 }
-
-resource "aws_network_interface" "puppet_internal" {
-  subnet_id       = var.puppet_private_subnet_id
-  security_groups = [aws_security_group.puppet_server_sg.id]
-
-  attachment {
-    instance     = aws_instance.puppet_ec2.id
-    device_index = 1
-  }
-}
