@@ -17,3 +17,7 @@ variable "vpc_id" {
 variable "apt_puppet_release_url" {
     type = string
 }
+
+variable "puppet_server_hostname" {
+    type = string
+}

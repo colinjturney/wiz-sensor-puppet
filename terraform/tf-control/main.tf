@@ -61,7 +61,7 @@ module "records" {
     },
   ]
 
-  depends_on = [module.zones]
+  depends_on = [module.zones, module.puppet_server]
 }
 
 module "puppet_server" {
@@ -82,4 +82,5 @@ module "puppet_agent" {
     aws_ec2_ssh_key_name = "colin-puppet-demo-ssh"
     vpc_id                = module.vpc.vpc_id
     apt_puppet_release_url = "https://apt.puppet.com/puppet8-release-jammy.deb"
+    puppet_server_hostname = module.puppet_server.puppet_internal_private_dns_name
 }

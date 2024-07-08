@@ -20,6 +20,7 @@ resource "aws_instance" "puppet_agent_ec2" {
 
     user_data            = templatefile("${path.module}/provisioning/templates/cloud-config.tpl",{
       apt_puppet_release_url = var.apt_puppet_release_url
+      puppet_server_hostname = var.puppet_server_hostname
     })
 
     tags = {

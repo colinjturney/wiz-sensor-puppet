@@ -23,7 +23,7 @@ write_files:
 
       export PATH=/opt/puppetlabs/bin:$PATH
 
-      puppet config set server puppet --section main
+      puppet config set server ${puppet_server_hostname} --section main
 
       puppet ssl bootstrap
 
